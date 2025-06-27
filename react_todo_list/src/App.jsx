@@ -39,25 +39,20 @@ function App() {
 
   return (
     <TodoProvider value={{todos,addTodo,deleteTodo,updateTodo,toggleComplete}}>
-       <div className="bg-[#172842] min-h-screen py-8">
-                <div className="w-full max-w-2xl mx-auto shadow-md rounded-lg px-4 py-3 text-white">
-                    <h1 className="text-2xl font-bold text-center mb-8 mt-2">Manage Your Todos</h1>
-                    <div className="mb-4">
-                        {/* Todo form goes here */} 
-                        <TodoForm />
-                    </div>
-                    <div className="flex flex-wrap gap-y-3">
-                        {/*Loop and Add TodoItem here */}
-                        {todos.map((todo) => (
-                          <div key={todo.id}
-                          className='w-full'
-                          >
-                            <TodoItem todo={todo} />
-                          </div>
-                        ))}
-                    </div>
-                </div>
-            </div>
+<div className="bg-gradient-to-br from-[#0f0c29] via-[#302b63] to-[#24243e] min-h-screen py-10 px-4 font-sans">
+  <div className="w-full max-w-2xl mx-auto bg-white/10 backdrop-blur-md shadow-lg rounded-2xl px-6 py-8 text-white">
+    <h1 className="text-3xl font-bold text-center mb-8">🎯 Manage Your Todos</h1>
+    <div className="mb-6">
+      <TodoForm />
+    </div>
+    <div className="space-y-4">
+      {todos.map((todo) => (
+        <TodoItem key={todo.id} todo={todo} />
+      ))}
+    </div>
+  </div>
+</div>
+
     </TodoProvider>
   )
 }
